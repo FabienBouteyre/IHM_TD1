@@ -12,39 +12,19 @@ import android.widget.TextView;
 public class Main extends AppCompatActivity implements View.OnClickListener {
 
     //TextView textViewName;
-    RecyclerView recyclerView;
-    Button buttonName;
+    private RecyclerView recyclerView;
+    private Button buttonName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //textViewName = findViewById(R.id.activity_main_textview_name);
-        recyclerView = findViewById(R.id.activity_main_recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new NameListAdapter());
-
         buttonName = findViewById(R.id.activity_main_button_name);
-
         buttonName.setOnClickListener(this);
-    }
 
-  /*
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1){
-            if (resultCode == RESULT_OK && data.getExtras() != null){
-                Bundle args =data.getExtras();
-                String name = args.getString("Username");
-                textViewName.setText(name);
-            } else {
-                //handle error
-            }
-        }
+        initList();
     }
-    */
 
     @Override
     protected void onResume() {
@@ -64,7 +44,9 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    /*private void initList(){
-        final LinearLayoutManager linearLayoutManager = new L
-    }*/
+    private void initList(){
+        recyclerView = findViewById(R.id.activity_main_recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new NameListAdapter());
+    }
 }

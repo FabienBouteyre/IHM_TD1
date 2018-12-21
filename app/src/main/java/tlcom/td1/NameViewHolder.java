@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class NameViewHolder extends RecyclerView.ViewHolder {
-    TextView nom;
+    private TextView nom;
 
     public NameViewHolder (@NonNull View itemView){
         super(itemView);
 
-        nom = itemView.findViewById(R.id.activity_editPage_editText);
+        nom = itemView.findViewById(R.id.item_textView);
     }
 
 

@@ -9,12 +9,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class EditPage extends AppCompatActivity {
-    //textViewName = findViewById(R.id.activity_main_textview_name);
-    //buttonName = findViewById(R.id.activity_main_button_name);
-    //activity_editPage_editText
 
-    TextInputEditText editText;
-    Button savedButton;
+    private TextInputEditText editText;
+    private Button savedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +33,17 @@ public class EditPage extends AppCompatActivity {
     }
 
     private void saveData(){
-        //Intent intent= new Intent();
-        //intent.putExtra("Username", editText.getText().toString());
 
-        //setResult(RESULT_OK, intent);
         String name = editText.getText().toString();
         if (!name.isEmpty()){
             DataManager.getInstance().addName(name);
         } else {
             Toast.makeText(this, "Veuillez saisir votre nom", Toast.LENGTH_SHORT).show();
         }
-
         finish();
+        Intent intent= new Intent(this,Main
+                .class);
+        startActivity(intent);
     }
 
 
