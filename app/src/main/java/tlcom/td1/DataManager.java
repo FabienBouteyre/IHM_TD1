@@ -1,12 +1,15 @@
 package tlcom.td1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataManager {
     private static DataManager INSTANCE;
 
-    private String name;
+    private List<String> name;
 
     private DataManager(){
-
+        name = new ArrayList<>();
     }
 
     public static DataManager getInstance(){
@@ -16,10 +19,10 @@ public class DataManager {
         return INSTANCE;
     }
 
-    public String getName(){
+    public List<String> getName(){
         return name;
     }
-    public void setName(String n ){
-        name=n;
+    public void addName(String n ){
+        this.name.add(n);
     }
 }

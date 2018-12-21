@@ -49,7 +49,7 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-        String name = DataManager.getInstance().getName();
+        //String name = DataManager.getInstance().getName();
         //textViewName.setText(name);
     }
 

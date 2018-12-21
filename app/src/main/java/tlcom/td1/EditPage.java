@@ -42,7 +42,7 @@ public class EditPage extends AppCompatActivity {
         //setResult(RESULT_OK, intent);
         String name = editText.getText().toString();
         if (!name.isEmpty()){
-            DataManager.getInstance().setName(name);
+            DataManager.getInstance().addName(name);
         } else {
             Toast.makeText(this, "Veuillez saisir votre nom", Toast.LENGTH_SHORT).show();
         }

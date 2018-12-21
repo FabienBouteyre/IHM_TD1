@@ -18,7 +18,7 @@ public class NameViewHolder extends RecyclerView.ViewHolder {
 
 
     public void setContent(String name){
-
+        this.nom.setText(name);
     }
 
 }
