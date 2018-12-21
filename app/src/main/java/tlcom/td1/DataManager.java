@@ -2,6 +2,7 @@ package tlcom.td1;
 
 public class DataManager {
     private static DataManager INSTANCE;
+
     private String name;
 
     private DataManager(){

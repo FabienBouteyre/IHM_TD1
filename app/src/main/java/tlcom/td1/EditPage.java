@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class editPage extends AppCompatActivity {
+public class EditPage extends AppCompatActivity {
     //textViewName = findViewById(R.id.activity_main_textview_name);
     //buttonName = findViewById(R.id.activity_main_button_name);
     //activity_editPage_editText

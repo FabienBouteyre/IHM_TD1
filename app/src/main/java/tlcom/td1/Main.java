@@ -1,18 +1,18 @@
 package tlcom.td1;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class main extends AppCompatActivity implements View.OnClickListener {
+public class Main extends AppCompatActivity implements View.OnClickListener {
 
-    TextView textViewName;
+    //TextView textViewName;
+    RecyclerView recyclerView;
     Button buttonName;
 
     @Override
@@ -20,7 +20,11 @@ public class main extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewName = findViewById(R.id.activity_main_textview_name);
+        //textViewName = findViewById(R.id.activity_main_textview_name);
+        recyclerView = findViewById(R.id.activity_main_recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new NameListAdapter());
+
         buttonName = findViewById(R.id.activity_main_button_name);
 
         buttonName.setOnClickListener(this);
@@ -46,7 +50,7 @@ public class main extends AppCompatActivity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
         String name = DataManager.getInstance().getName();
-        textViewName.setText(name);
+        //textViewName.setText(name);
     }
 
     @Override
@@ -54,13 +58,13 @@ public class main extends AppCompatActivity implements View.OnClickListener {
 
         switch (view.getId()){
             case R.id.activity_main_button_name:
-                Intent intent= new Intent(this,editPage.class);
+                Intent intent= new Intent(this,EditPage.class);
                 startActivity(intent);
                 break;
         }
     }
 
-    private void initList(){
+    /*private void initList(){
         final LinearLayoutManager linearLayoutManager = new L
-    }
+    }*/
 }
